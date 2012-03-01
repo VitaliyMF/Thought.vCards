@@ -24,6 +24,8 @@ namespace Thought.vCards
         private string postalCode;
         private string region;
         private string street;
+        private string extendedAddress;
+        private string postOfficeBox;
 
 
         /// <summary>
@@ -280,6 +282,35 @@ namespace Thought.vCards
                 this.street = value;
             }
         }
+
+		public string ExtendedAddress {
+			get {
+				return this.extendedAddress ?? string.Empty;
+			}
+			set {
+				this.extendedAddress = value;
+			}
+		}
+
+		public string PostOfficeBox {
+			get {
+				return this.postOfficeBox ?? string.Empty;
+			}
+			set {
+				this.postOfficeBox = value;
+			}
+		}  
+		
+		public bool IsEmpty() {
+			return (string.IsNullOrEmpty(City)) &&
+                (string.IsNullOrEmpty(Country)) &&
+                (string.IsNullOrEmpty(PostalCode)) &&
+                (string.IsNullOrEmpty(Region)) &&
+                (string.IsNullOrEmpty(Street) &&
+				string.IsNullOrEmpty(ExtendedAddress) &&
+				string.IsNullOrEmpty(PostOfficeBox));
+		}      
+		
 
     }
 
