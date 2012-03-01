@@ -1,0 +1,100 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7A4725B-CB7B-4F10-8DD1-DE2E4AECA498}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tests</RootNamespace>
+    <AssemblyName>Thought.vCards.UnitTests</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.2.9222, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Samples\Outlook2007.cs" />
+    <Compile Include="Samples\OutlookTests.cs" />
+    <Compile Include="Samples\PalmAgentSampleTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleCards.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleCards.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\RfcAuthorTests.cs" />
+    <Compile Include="vCardCertificateTests.cs" />
+    <Compile Include="vCardEmailAddressTests.cs" />
+    <Compile Include="vCardPhoneTests.cs" />
+    <Compile Include="vCardPhotoTests.cs" />
+    <Compile Include="vCardDeliveryAddressTests.cs" />
+    <Compile Include="vCardPropertyTests.cs" />
+    <Compile Include="vCardSourceTests.cs" />
+    <Compile Include="vCardStandardReaderTests.cs" />
+    <Compile Include="vCardStandardWriterTests.cs" />
+    <Compile Include="vCardSubpropertyCollectionTests.cs" />
+    <Compile Include="vCardSubpropertyTests.cs" />
+    <Compile Include="vCardTests.cs" />
+    <Compile Include="vCardWebSiteTests.cs" />
+    <Compile Include="Samples\XPalmWithPhotoTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SampleCards.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SampleCards.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
+    <None Include="Resources\Outlook2007.txt" />
+    <None Include="Resources\RfcAuthors.txt" />
+    <None Include="Resources\XPalmWithPhoto.txt" />
+    <None Include="Resources\PalmAgentSamples.txt" />
+    <None Include="Resources\OutlookCertificate.txt" />
+    <None Include="Resources\OutlookSimple.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Thought.vCards\Thought.vCards.csproj">
+      <Project>{A53D3CEB-F7AF-41AB-AA04-4D3CF684BBAF}</Project>
+      <Name>Thought.vCards</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
